@@ -4,12 +4,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.*;
 import java.sql.*;
 
+
 import java.io.File;
 import javax.swing.*;
 
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
+import javax.swing.JProgressBar;
 
 public class HoloTranView extends JFrame {
 
@@ -54,6 +55,8 @@ public class HoloTranView extends JFrame {
         jButton5 = new javax.swing.JButton();
         jTextField5 = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
+        jButtonBack1 = new javax.swing.JButton();
+        jButtonBack2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(500, 400));
@@ -211,6 +214,16 @@ public class HoloTranView extends JFrame {
             }
 
         });
+        
+        
+        jButtonBack1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jButtonBack1.setText("BACK");
+        jButtonBack1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                jButtonBack1ActionPerformed(e);
+            }
+
+        });
 
 //        jTextField5.addActionListener(new java.awt.event.ActionListener() {
 //            public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,7 +251,10 @@ public class HoloTranView extends JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(jButton5)))
+                                                .addComponent(jButton5)
+                                        .addGap(50,50,50)
+                                                .addComponent(jButtonBack1)
+                                        ))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -247,11 +263,14 @@ public class HoloTranView extends JFrame {
                                 .addGap(16, 16, 16)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton5)
+                                        .addComponent(jButton5)                                       
                                         .addComponent(jLabel7))
+                                
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap())
+                                .addContainerGap()
+                        .addComponent(jButtonBack1)
+                        )
         );
 
 
@@ -336,6 +355,20 @@ public class HoloTranView extends JFrame {
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton7.setForeground(new java.awt.Color(0, 102, 102));
         jButton7.setText("LOG IN");
+        
+        
+            jButtonBack2.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jButtonBack2.setText("BACK");
+        jButtonBack2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                jButtonBack1ActionPerformed(e);
+            }
+
+        });
+        
+        
+        
+        
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
@@ -372,8 +405,15 @@ public class HoloTranView extends JFrame {
         });
 
         jLabel11.setText("Don't have account?");
+       jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+        
+        
+        
 
-        jLabel12.setText("Forgot password?");
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 102, 102));
@@ -401,9 +441,15 @@ public class HoloTranView extends JFrame {
                                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGroup(jPanel5Layout.createSequentialGroup()
                                                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(41, 41, 41)
-                                                .addComponent(jLabel12)
-                                                .addGap(124, 124, 124))))
+                                                .addGap(30, 30, 30)
+                                               // .addComponent(jLabel12)
+                                               // .addGap(124, 124, 124)
+                                                .addComponent(jButtonBack2)
+                                                .addGap(10, 10, 10)
+                                        )))
+                        
+                        
+                        
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -432,7 +478,9 @@ public class HoloTranView extends JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel12)))
+                                      //  .addComponent(jLabel12)
+                                        .addComponent(jButtonBack2)
+                                ))
         );
 //        p4 View
         jLabel15 = new javax.swing.JLabel();
@@ -448,6 +496,7 @@ public class HoloTranView extends JFrame {
         jLabel19 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
+        jButtonBack4 = new javax.swing.JButton();
 
         jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -478,11 +527,29 @@ public class HoloTranView extends JFrame {
         jLabel19.setText("Type");
 
         jButton9.setText("Browse");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                fileChoose(3);
+            }
+        });
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel20.setText("Video");
+        jLabel20.setText("Video Name");
 
+         jButtonBack4.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jButtonBack4.setText("Log out");
+        jButtonBack4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                jButtonBack3ActionPerformed(e);
+            }
+
+        });
+        
+        
+        
+        
+        
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -516,8 +583,15 @@ public class HoloTranView extends JFrame {
                                                                                 .addComponent(jButton9))
                                                                         .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(55, 55, 55))))))
+                                                                .addComponent(jButtonBack4)
+                                                                .addGap(55, 55, 55)
+                                                        )))))
         );
+        
+        
+        //p6
+        
+         
         jPanel6Layout.setVerticalGroup(
                 jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel6Layout.createSequentialGroup()
@@ -542,14 +616,173 @@ public class HoloTranView extends JFrame {
                                         .addComponent(jLabel19))
                                 .addGap(13, 13, 13)
                                 .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                                .addComponent(jButtonBack4)
                                 .addContainerGap())
+                
         );
+        
+        //p7
+        jPanel7 = new javax.swing.JPanel();
+        jLabel299 = new javax.swing.JLabel();
+        jTextField199 = new javax.swing.JTextField();
+        jTextField299 = new javax.swing.JTextField();
+        jTextField399 = new javax.swing.JTextField();
+        jButton1999 = new javax.swing.JButton();
+        jButtonBack3 = new javax.swing.JButton();
+        jLabel499 = new javax.swing.JLabel();
+        jLabel599 = new javax.swing.JLabel();
+        jLabel3999 = new javax.swing.JLabel();
+        
+        
+        jPanel7.setBackground(new java.awt.Color(204, 204, 255));
+
+        jLabel299.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel299.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel299.setText("Please Register");
+
+        jButton1999.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1999.setForeground(new java.awt.Color(0, 153, 153));
+        jButton1999.setText("Register");
+
+        jLabel499.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel499.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel499.setText("Password");
+
+        jLabel599.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel599.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel599.setText("Confirm Password");
+
+        jLabel3999.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3999.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel3999.setText("Username");
+        
+        jButtonBack3.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jButtonBack3.setText("BACK");
+        jButtonBack3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                jButtonBack3ActionPerformed(e);
+            }
+
+        });
+        
+        
+        
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel3999)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                                .addComponent(jTextField199, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel499)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel599)
+                                .addGap(26, 26, 26)
+                                .addComponent(jTextField399, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField299, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(136, 136, 136))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(jButton1999, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(213, 213, 213))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel299, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(193, 193, 193))
+                             
+                )  .addComponent(jButtonBack3)
+                    .addGap(20, 20, 20)
+            
+            
+            )
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel299, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField199, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3999))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField299, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel499))
+                .addGap(18, 18, 18)
+                    
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField399, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel599))
+                .addGap(32, 32, 32)
+                .addComponent(jButton1999, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addGap(22, 22, 22)
+                    .addComponent(jButtonBack3)
+            //.addGap(5, 50, 50)
+            )
+                 
+               
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         jPanel2.setVisible(false);
         jPanel3.setVisible(false);
         jPanel5.setVisible(false);
-        jPanel6.setVisible(false);
+       jPanel6.setVisible(false);
+        jPanel7.setVisible(false);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+//        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -561,7 +794,9 @@ public class HoloTranView extends JFrame {
                                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                )
                                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -581,6 +816,9 @@ public class HoloTranView extends JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                
                                 .addContainerGap())
         );
 
@@ -689,6 +927,44 @@ public class HoloTranView extends JFrame {
         jPanel3.setVisible(true);
         pack();
     }
+    
+      private void jButtonBack1ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here: -> To Back
+        jPanel2.setVisible(false);
+        jPanel3.setVisible(false);
+        jPanel5.setVisible(false);
+        
+        jPanel1.setVisible(true);
+        jPanel4.setVisible(true);       
+        pack();
+    }
+      
+      private void jButtonBack3ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here: -> To Back
+        jPanel2.setVisible(false);
+        jPanel3.setVisible(false);
+        //jPanel5.setVisible(false);
+        jPanel7.setVisible(false);
+        jPanel6.setVisible(false);
+        jPanel1.setVisible(true);
+        jPanel5.setVisible(true);       
+        pack();
+    }
+      
+        private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {                                     
+        // TODO add your handling code here:
+         jPanel2.setVisible(false);
+        jPanel3.setVisible(false);
+        jPanel5.setVisible(false);
+        
+        jPanel1.setVisible(true);
+        jPanel7.setVisible(true);
+        pack();
+        
+    }  
+      
+     
+//    
 
     private void jButton88ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here: -> To login
@@ -712,6 +988,8 @@ public class HoloTranView extends JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButtonBack1;
+     private javax.swing.JButton jButtonBack2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -762,5 +1040,20 @@ public class HoloTranView extends JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    
+    //p7
+      private javax.swing.JButton jButton1999;
+   // private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel299;
+    private javax.swing.JLabel jLabel3999;
+    private javax.swing.JLabel jLabel499;
+    private javax.swing.JLabel jLabel599;
+   // private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JTextField jTextField199;
+    private javax.swing.JTextField jTextField299;
+    private javax.swing.JTextField jTextField399;
+     private javax.swing.JButton jButtonBack3;
+     private javax.swing.JButton jButtonBack4;
 
 }
